@@ -38,9 +38,10 @@ jobs:
          echo "AAA  AAA"
          gcloud auth configure-docker eu.gcr.io-docker.pkg.dev --quiet
          echo "AAA  AAA  AAA "
-      - name: Create repository
+
+      - name: Create Repository
         run: |-
-        gcloud artifacts repositories create ${{ env.SERVICE }} --repository-format=docker --location=${{ env.REGION }} --description="Repositorio SQL" 
+         gcloud artifacts repositories create ${{ env.SERVICE }} --repository-format=docker --location=${{ env.REGION }} --description="Repositorio SQL" 
 
       - name: Build and Push Container
         run: |-
