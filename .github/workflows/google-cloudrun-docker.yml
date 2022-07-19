@@ -7,7 +7,7 @@ on:
 
 env:
   PROJECT_ID: openmarket-356106
-  GAR_LOCATION: europe
+  GAR_LOCATION: eu.gcr.io
   SERVICE: sql-db
   REGION: europe-southwest1
   REPOSITORY: rep-sql-db
@@ -39,11 +39,10 @@ jobs:
       # gcloud auth configure-docker --quiet
       - name: Docker Auth        
         run: |-      
-         echo "AAA"
-         gcloud auth configure-docker ${{ env.GAR_LOCATION }}-docker.pkg.dev --quiet
-         echo "AAA  AAA"
+         
+         gcloud auth configure-docker ${{ env.GAR_LOCATION }}-docker.pkg.dev --quiet         
          gcloud auth configure-docker eu.gcr.io-docker.pkg.dev --quiet
-         echo "AAA  AAA  AAA "
+         
 
       - name: Build and Push Container
         run: |-
