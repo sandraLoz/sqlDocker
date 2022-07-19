@@ -1,12 +1,12 @@
-version: "1"
 services:
     sqlserver:
         build: .       
-        container_name: test-sql
-        privileged: true    
-        environment:
-          ACCEPT_EULA: Y
-          SA_PASSWORD: inditexPa%%w0rd
-          MSSQL_PID: Developer          
+        container_name: sql-db
+        privileged: true
+        env_file: ./env.list 
+        #environment:
+        #  ACCEPT_EULA: Y
+        #  SA_PASSWORD: inditexPa%%w0rd
+        #  MSSQL_PID: Developer          
         ports:
-          - 1433:1433                 
+          - 1433:1433
