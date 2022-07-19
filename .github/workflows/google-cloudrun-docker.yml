@@ -34,9 +34,11 @@ jobs:
       - name: Docker Auth        
         run: |-
          gcloud auth configure-docker --quiet
+         echo "AAA"
          gcloud auth configure-docker europe-southwest1-docker.pkg.dev --quiet
+         echo "AAA  AAA"
          gcloud auth configure-docker eu.gcr.io-docker.pkg.dev --quiet
-
+         echo "AAA  AAA  AAA "
       - name: Build and Push Container
         run: |-
           docker build -t "${{ env.GAR_LOCATION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.SERVICE }}:${{ github.sha }}" ./
