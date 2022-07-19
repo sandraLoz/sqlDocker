@@ -30,10 +30,9 @@ jobs:
           credentials_json: '${{ secrets.GCP_CREDENTIALS }}'
           
       # BEGIN - Docker auth and build (NOTE: If you already have a container image, these Docker steps can be omitted)
-
+      # gcloud auth configure-docker --quiet
       - name: Docker Auth        
-        run: |-
-         gcloud auth configure-docker --quiet
+        run: |-      
          echo "AAA"
          gcloud auth configure-docker europe-southwest1-docker.pkg.dev --quiet
          echo "AAA  AAA"
