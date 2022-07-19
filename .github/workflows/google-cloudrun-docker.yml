@@ -7,7 +7,7 @@ on:
 
 env:
   PROJECT_ID: openmarket-356106
-  GAR_LOCATION: europe
+  GAR_LOCATION: eu.gcr.io
   SERVICE: sql-db
   REGION: europe-southwest1
   REPOSITORY: rep-sql-db
