@@ -40,7 +40,8 @@ jobs:
       # Configurar la autenticación en los repositorios de Docker en la región
       - name: Docker Auth        
         run: |-               
-         gcloud auth configure-docker europe-southwest1-docker.pkg.dev --quiet
+         #gcloud auth configure-docker europe-southwest1-docker.pkg.dev --quiet
+          gcloud auth print-access-token | docker login -u oauth2accesstoken --password-stdin europe-southwest1-docker.pkg.dev
          
       - name: Build Container
         run: |-
