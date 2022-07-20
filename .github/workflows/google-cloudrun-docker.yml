@@ -31,7 +31,7 @@ jobs:
         uses: 'google-github-actions/auth@v0'
         with:
           credentials_json: '${{ secrets.GCP_CREDENTIALS }}'
-          gcloud auth configure-docker europe-southwest1-docker.pkg.dev
+          
       #- name: Create Repository
       #  run: |-
       #   gcloud artifacts repositories create ${{ env.REPOSITORY }} --repository-format=docker --location=${{ env.REGION }} --description="Repositorio SQL" 
