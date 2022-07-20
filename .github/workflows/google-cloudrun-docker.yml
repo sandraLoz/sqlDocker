@@ -37,7 +37,7 @@ jobs:
       #   gcloud artifacts repositories create ${{ env.REPOSITORY }} --repository-format=docker --location=${{ env.REGION }} --description="Repositorio SQL" 
 
 
-      # gcloud auth configure-docker --quiet
+      # Configurar la autenticación en los repositorios de Docker en la región
       - name: Docker Auth        
         run: |-               
          gcloud auth configure-docker europe-southwest1-docker.pkg.dev --quiet
@@ -45,7 +45,6 @@ jobs:
       - name: Build Container
         run: |-
           docker build -t "${{ env.GAR_LOCATION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.REPOSITORY }}/${{ env.SERVICE }}:${{ github.sha }}" ./
-      
 
       - name: Push Container
         run: |-      
